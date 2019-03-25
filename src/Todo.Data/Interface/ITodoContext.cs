@@ -7,6 +7,6 @@ namespace Todo.Data.Interface
     {
         DbSet<Todo.Data.Model.Todo> Todos { get; set; }
 
-        Task<int> SaveChangesAsync();
+        Task SaveChangesAsync();
     }
 }

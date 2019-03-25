@@ -8,7 +8,7 @@ namespace Todo.Data
     {
         public DbSet<Todo.Data.Model.Todo> Todos { get; set; }
 
-        public Task<int> SaveChangesAsync()
+        public Task SaveChangesAsync()
         {
             throw new System.NotImplementedException();
         }

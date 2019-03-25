@@ -22,7 +22,10 @@ namespace Todo.CommandHandlers
             EntryValidations(notification);
             BusinessValidations(notification);
 
-            throw new NotImplementedException();
+            var todoToDelete = context.Todos.Single(x => x.Id == notification.Id);
+            todoToDelete.DeletedAt = DateTime.Now;
+
+            return context.SaveChangesAsync();
         }
 
         private void EntryValidations(RemoveTodoItemCommand notification)

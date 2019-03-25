@@ -22,7 +22,16 @@ namespace Todo.CommandHandlers
             EntryValidations(notification);
             BusinessValidations(notification);
 
-            throw new NotImplementedException();
+            var newTodo = new Todo.Data.Model.Todo
+            {
+                Id = Guid.NewGuid(),
+                Title = notification.Title,
+                Description = notification.Description,
+                CreatedAt = DateTime.Now
+            };
+
+            context.Todos.Add(newTodo);
+            return context.SaveChangesAsync();
         }
 
         private void EntryValidations(AddTodoItemCommand notification)
