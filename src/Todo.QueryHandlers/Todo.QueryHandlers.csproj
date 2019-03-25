@@ -4,4 +4,13 @@
     <TargetFramework>netcoreapp2.2</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <PackageReference Include="MediatR" Version="6.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Todo.Data\Todo.Data.csproj" />
+    <ProjectReference Include="..\Todo.Queries\Todo.Queries.csproj" />
+  </ItemGroup>
+
 </Project>
